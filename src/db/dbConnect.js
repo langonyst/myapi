@@ -11,7 +11,7 @@ const connectToMongo = async () => {
         await client.connect()
 
         console.log('Connected to remote Database')
-        return client.db()
+        return client.db('sample_mflix')
     }catch(error){
         console.error('Error: ', error)
         throw error;

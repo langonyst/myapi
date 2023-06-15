@@ -1,0 +1,13 @@
+{
+  "name": "myapi",
+  "version": "1.0.0",
+  "description": "A stupid API",
+  "main": "src/index.js",
+  "repository": "https://github.com/langonyst/myapi.git",
+  "author": "Langony ST <langonyst@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0"
+  }
+}

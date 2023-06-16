@@ -9,7 +9,7 @@
     "start": "node src/index.js"
   },
   "engines": {
-    "node": ">=14.20.1 <18.15.0"
+    "node": ">=14.17.0 <18.15.0"
   },
   "repository": "https://github.com/langonyst/myapi.git",
   "author": "Langony ST <langonyst@gmail.com>",

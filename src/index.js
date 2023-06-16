@@ -1,20 +1,12 @@
 import express from 'express'
-import connectToMongo from './db/dbConnect.js'
+import movieRouter from './routes/moviesRoutes.js'
 
 const app = express()
 
-connectToMongo().then((db) => {
+app.use(express.json())
 
-    app.get('/', (req, res) => {
-        res.status(200).send({
-            message: 'Puta merda, perai...'
-        })
-    })
+app.use('/movies', movieRouter)
 
-    app.listen(3000, () => {
-        console.log('Server listening on port 3000')
-    })
-}).catch((error) => {
-    console.error('Error connection express: ' , error)
-    process.exit(1)
+app.listen(3000, () => {
+    console.log('Server listening on port 3000')
 })

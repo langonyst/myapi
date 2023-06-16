@@ -1,0 +1,21 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Movies API Documentation",
+        "description": "Docs",
+        "contact": {
+            "email": "example@mail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Local dev server"
+        },
+        {
+            "url": "https://api-movies-a50g.onrender.com",
+            "description": "Render Api Production server"
+        }
+    ]
+}

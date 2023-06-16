@@ -1,10 +1,8 @@
 import { MongoClient } from 'mongodb';
-import { mongoURI } from '../../keys/keys.js';
+//import { mongoURI } from '../../keys/keys.js';
 
 const connectToMongo = async () => {
-    const uri = mongoURI
-
-
+    const uri = process.env.mongo_uri;
     try{
         const client = new MongoClient(uri)
 

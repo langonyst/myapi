@@ -1,5 +1,6 @@
 import express from 'express'
 import movieRouter from './routes/moviesRoutes.js'
+import userRouter from './routes/usersRoutes.js'
 import swaggerRouter from './routes/swagger.cjs'
 
 const app = express()
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/movies', movieRouter)
+app.use('/users', userRouter)
 app.use('/doc', swaggerRouter)
 
 app.listen(port, () => {

@@ -3,12 +3,15 @@ import movieRouter from './routes/moviesRoutes.js'
 import userRouter from './routes/usersRoutes.js'
 import swaggerRouter from './routes/swagger.cjs'
 import newsRouter from './routes/NewsRoutes.js'
+import cors from 'cors';
 
 const app = express()
 
 const port = 3000 || process.env.PORT
 
 app.use(express.json())
+
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.status(200).send({

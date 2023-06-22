@@ -17,5 +17,536 @@
             "url": "https://api-movies-a50g.onrender.com",
             "description": "Render Api Production server"
         }
-    ]
-}
+    ],
+    "paths": {
+        "/movies": {
+          "get": {
+            "summary": "Get a list of movies",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Movie"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "summary": "Create a new movie",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/NewMovie"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "201": {
+                "description": "Created",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Movie"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/movies/{id}": {
+          "get": {
+            "summary": "Get a movie by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the movie",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Movie"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "patch": {
+            "summary": "Update a movie",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the movie",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UpdateMovie"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Movie"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "summary": "Delete a movie",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the movie",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK"
+              }
+            }
+          }
+        },
+        "/news": {
+          "get": {
+            "summary": "Get a list of news",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/News"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "summary": "Create a new news",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/NewNews"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "201": {
+                "description": "Created",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/News"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/news/{id}": {
+          "get": {
+            "summary": "Get a news by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the news",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/News"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "patch": {
+            "summary": "Update a news",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the news",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UpdateNews"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/News"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "summary": "Delete a news",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the news",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK"
+              }
+            }
+          }
+        },
+        "/users": {
+          "get": {
+            "summary": "Get a list of users",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/User"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "summary": "Create a new user",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/NewUser"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "201": {
+                "description": "Created",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/users/{id}": {
+          "get": {
+            "summary": "Get a user by ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the user",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "patch": {
+            "summary": "Update a user",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the user",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UpdateUser"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "summary": "Delete a user",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID of the user",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK"
+              }
+            }
+          }
+        }
+      },
+      "components": {
+        "schemas": {
+          "Movie": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "12345"
+              },
+              "title": {
+                "type": "string",
+                "example": "Movie Title"
+              },
+              "genre": {
+                "type": "string",
+                "example": "Action"
+              },
+              "year": {
+                "type": "integer",
+                "example": 2021
+              }
+            }
+          },
+          "NewMovie": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "example": "Movie Title"
+              },
+              "genre": {
+                "type": "string",
+                "example": "Action"
+              },
+              "year": {
+                "type": "integer",
+                "example": 2021
+              }
+            }
+          },
+          "UpdateMovie": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "example": "Updated Movie Title"
+              },
+              "genre": {
+                "type": "string",
+                "example": "Updated Genre"
+              },
+              "year": {
+                "type": "integer",
+                "example": 2022
+              }
+            }
+          },
+          "News": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "12345"
+              },
+              "title": {
+                "type": "string",
+                "example": "News Title"
+              },
+              "content": {
+                "type": "string",
+                "example": "News Content"
+              }
+            }
+          },
+          "NewNews": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "example": "News Title"
+              },
+              "content": {
+                "type": "string",
+                "example": "News Content"
+              }
+            }
+          },
+          "UpdateNews": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "example": "Updated News Title"
+              },
+              "content": {
+                "type": "string",
+                "example": "Updated News Content"
+              }
+            }
+          },
+          "User": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "12345"
+              },
+              "name": {
+                "type": "string",
+                "example": "John Doe"
+              },
+              "email": {
+                "type": "string",
+                "example": "john.doe@example.com"
+              }
+            }
+          },
+          "NewUser": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "example": "John Doe"
+              },
+              "email": {
+                "type": "string",
+                "example": "john.doe@example.com"
+              }
+            }
+          },
+          "UpdateUser": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "example": "Updated Name"
+              },
+              "email": {
+                "type": "string",
+                "example": "updated.email@example.com"
+              }
+            }
+          }
+        }
+      }
+    }

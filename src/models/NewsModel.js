@@ -25,6 +25,22 @@ export class NewsModel{
         }
     }
 
+    async findNewsByTitle(titleFragment) {
+        try {
+            const db = await connectToMongo();
+            const query = { title: { $regex: titleFragment, $options: 'i' } };
+            const options = {
+                projection: { _id: 1, title: 1 }
+            };
+            const news = await db.collection('news').find(query, options).toArray();
+    
+            return news;
+        } catch (error) {
+            console.error('Error finding by title', error);
+            throw error;
+        }
+    }
+
     async createNews(doc){
         try{
             const db = await connectToMongo()

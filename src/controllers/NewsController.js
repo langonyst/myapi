@@ -49,6 +49,25 @@ export class NewsController{
         }
     }
 
+    async searchByTitle(req, res) {
+        try {
+            const { title } = req.body;
+    
+            const news = await newsModel.findNewsByTitle(title);
+    
+            if (news.length === 0) {
+                return res.status(400).send({
+                    message: 'There are no news with this title!'
+                });
+            }
+    
+            return res.json(news)
+        } catch (error) {
+            console.error('Error search by title: ', error);
+            throw error;
+        }
+    }
+
     async updateNews(req, res){
         try{
             const { id } = req.params

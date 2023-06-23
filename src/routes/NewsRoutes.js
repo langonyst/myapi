@@ -7,6 +7,7 @@ const newsController = new NewsController()
 
 newsRouter.get('/', newsController.getNews)
 newsRouter.get('/:id', validId, newsController.getNewsById)
+newsRouter.post('/search', newsController.searchByTitle)
 newsRouter.post('/', newsController.createNews)
 newsRouter.patch('/:id', validId, newsController.updateNews)
 newsRouter.delete('/:id', validId, newsController.deleteNews)

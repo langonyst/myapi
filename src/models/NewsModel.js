@@ -30,7 +30,7 @@ export class NewsModel{
             const db = await connectToMongo();
             const query = { title: { $regex: titleFragment, $options: 'i' } };
             const options = {
-                projection: { _id: 1, title: 1 }
+                projection: { _id: 1, title: 1, author: 1 }
             };
             const news = await db.collection('news').find(query, options).toArray();
     

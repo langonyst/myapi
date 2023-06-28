@@ -521,6 +521,10 @@
               "content": {
                 "type": "string",
                 "example": "News Content"
+              },
+              "author": {
+                "type": "string",
+                "example": "News Author"
               }
             }
           },
@@ -534,6 +538,10 @@
               "content": {
                 "type": "string",
                 "example": "News Content"
+              },
+              "author": {
+                "type": "string",
+                "example": "News Author"
               }
             }
           },

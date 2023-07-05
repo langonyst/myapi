@@ -5,7 +5,7 @@ export class MoviesModel {
     async listMovies() {
         try{
             const db = await connectToMongo()
-            const movies = await db.collection('movies').find().limit(15).toArray()
+            const movies = await db.collection('movies').find().sort({_id: -1}).limit(15).toArray()
             return movies;
         }catch(error){
             console.error('Error listing movies: ', error)

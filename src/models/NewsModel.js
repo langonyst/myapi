@@ -5,7 +5,7 @@ export class NewsModel{
     async listNews(){
         try{
             const db = await connectToMongo()
-            const news = await db.collection('news').find().limit(15).toArray()
+            const news = await db.collection('news').find().sort({ _id: -1 }).limit(15).toArray()
             return news;
         }catch(error){
             console.error('Error listing news: ', error)

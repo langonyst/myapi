@@ -15,9 +15,9 @@ export class MoviesController {
 
     async createMovie(req, res){
         try{
-            const { title, year, rating, type, gender} = req.body
+            const { title, year, rating, type, gender, plot, fullplot, directors} = req.body
 
-            if(!title || !year || !rating || !type || !gender){
+            if(!title || !year || !rating || !type || !gender || !plot || !fullplot || !directors){
                 return res.status(400).send({
                     message: 'Submit all fields to create a Movie!'
                 })
@@ -28,7 +28,10 @@ export class MoviesController {
                 year,
                 rating,
                 type,
-                gender
+                gender,
+                plot,
+                fullplot,
+                directors
             })
 
             res.status(201).send({
@@ -55,9 +58,9 @@ export class MoviesController {
     async updateMovie(req, res){
         try{
             const { id } = req.params
-            const { title, year, rating, type, gender} = req.body
+            const { title, year, rating, type, gender, fullplot, plot, directors} = req.body
 
-            if(!title && !year && !rating && !type && !gender){
+            if(!title && !year && !rating && !type && !gender && !fullplot && !plot && !directors){
                 return res.status(400).send({
                     message: 'Submit at least one field to update the Movie!'
                 })
@@ -67,7 +70,10 @@ export class MoviesController {
                 year,
                 rating,
                 type,
-                gender
+                gender,
+                plot,
+                fullplot,
+                directors
             }
 
             const movie = await movieModel.updateMovie(id, docMovie)
